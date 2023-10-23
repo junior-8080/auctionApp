@@ -15,7 +15,9 @@ const Navbar = () => {
           <p>Cart</p>
           <LuShoppingCart className='text-xl' />
         </div>
+
       </div>
+      
       <div className="flex flex-row bg-white text-black-500 justify-end pl-10 pr-10">
         <div className='flex ml-12'>
           <Image src="/assets/logo.svg" width={40} height={40} alt="logo" />
