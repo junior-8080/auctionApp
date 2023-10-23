@@ -3,7 +3,7 @@ import React from "react";
 const AuthLayout = (page : any) => {
   return (
     <div className="w-full h-screen flex flex-row items-stretch ">
-     <h1>Hello world</h1>
+     <h1>Hello </h1>
     </div>
   );
 };
