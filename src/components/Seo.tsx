@@ -5,7 +5,7 @@ import { SITE_URL } from "@lib/constants";
 
 export function Seo({
   href = "",
-  keywords = " ",
+  keywords = "",
   title = "",
   ogTitle = "",
   description = ""
