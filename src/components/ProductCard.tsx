@@ -60,7 +60,7 @@ const ProductCard = () => {
           </p>
         </div>
         <div className="justify-center items-center mt-5">
-          <button className="bg-teal-400 h-16 rounded-md text-2xl font-bold text-white w-full">
+          <button className="bg-teal h-16 rounded-md text-2xl font-bold text-white w-full">
             Place Bid
           </button>
         </div>

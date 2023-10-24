@@ -5,7 +5,7 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <nav className={"flex flex-col w-screen "}>
-      <div className={"flex   bg-teal-400 p-3"}>
+      <div className={"flex   bg-teal p-3"}>
         <div className={"flex flex-1 items-center gap-10 pl-20"}>
           <p>Help</p>
           <p>How to buy</p>
@@ -30,7 +30,7 @@ const Navbar = () => {
             <li>Contact</li>
           </ul>
           <div className={"flex font-bold mr-8 -500 w-60 gap-4"}>
-            <button className="bg-teal-400 text-center p-1 text-white rounded-md h-82 w-36">
+            <button className="bg-teal text-center p-1 text-white rounded-md h-82 w-36">
               Login
             </button>
             <button className="bg-white border text-teal-500 p-1 border-teal-500 rounded-md h-82 w-36 ">

@@ -16,7 +16,7 @@ const config: Config = {
           r: "8px 0 15px -3px rgba(0, 0, 0, 0.1), 4px 0 6px -2px rgba(0, 0, 0, 0.05)",
         },
         backgroundImage: {
-          image: "url('./assets/images/background.webp')",
+          image: "url('/assets/background.svg')",
         },
         backgroundColor: {
           overlay: "#156064",
@@ -53,11 +53,15 @@ const config: Config = {
           blue: "rgb(191,220,255,1)",
           pink: "rgba(255,164,246,0.2)",
           white: "#FFFFFF",
+          teal:"#57B3AC",
           black: {
             600: "#929292",
             500: "#011627",
             400: "#344552",
           },
+          textBlack: "#0D0A19",
+          grey:"#9A9EA7",
+          lightGrey:"#E5E5E5",
           dark: "#190B36",
           text: {
             400: "#344552",
