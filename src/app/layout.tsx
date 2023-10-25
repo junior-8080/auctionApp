@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { PT_Sans} from 'next/font/google'
 import './globals.css'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const pt_Sans = PT_Sans({ 
   weight:"400",
@@ -20,7 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={pt_Sans.className}>{children}</body>
+      <body className={pt_Sans.className}>
+      <Navbar />
+        {children}
+        <Footer />
+        </body>
     </html>
   )
 }
