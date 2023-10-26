@@ -5,7 +5,7 @@ import { LuSearch } from "react-icons/lu";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col w-screen">
+    <footer className="flex flex-col w-full">
       <div className="flex bg-teal   px-[90px] h-[168px] items-center">
         <p className="text-xl font-bold flex-1">SEARCH THE PRODUCTS</p>
 

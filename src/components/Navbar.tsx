@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className={"flex flex-col w-screen "}>
+    <nav className={"flex flex-col w-full "}>
       <div className={"flex   bg-teal p-3"}>
         <div className={"flex flex-1 items-center gap-10 pl-20"}>
           <p>Help</p>
