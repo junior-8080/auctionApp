@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const useFormState = () => {
+const useFormState = (method: string) => {
   const [state, setState] = useState({
-    recover: false,
-    signIn: true,
-    signUp: false,
+    recover: method === "recover",
+    signIn: method === "login",
+    signUp: method === "signup",
     signUpPage: 1,
     completed: false,
   });
@@ -50,7 +50,7 @@ const useFormState = () => {
         recover: false,
         signIn: false,
         signUp: false,
-        completed:true
+        completed: true,
       }));
     } else if (state.recover) {
       console.log("recovered!");

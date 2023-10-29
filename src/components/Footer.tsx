@@ -8,7 +8,6 @@ const Footer = () => {
     <footer className="flex flex-col w-full">
       <div className="flex bg-teal   px-[90px] h-[168px] items-center">
         <p className="text-xl font-bold flex-1">SEARCH THE PRODUCTS</p>
-
         <div className="flex  justify-end gap-5">
           <div className="bg-white px-5 flex items-center text-xl  rounded-lg gap-5 w-4/5 h-16">
             <BsSearch className="text-grey" />

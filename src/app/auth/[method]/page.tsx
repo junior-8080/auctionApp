@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import { BsFillCheckCircleFill, BsGoogle, BsTwitter } from "react-icons/bs";
 import {
   BiArrowBack,
@@ -12,6 +12,7 @@ import { MdEmail } from "react-icons/md";
 import { IoMdLock } from "react-icons/io";
 import useFormState from "@/hooks/useFormState";
 import { PiLock } from "react-icons/pi";
+import { useParams } from "next/navigation";
 
 type FormData = {
   email: string;
@@ -34,6 +35,9 @@ const Auth = () => {
     rememberMe: false,
   });
 
+  const params = useParams();
+  const method = params.method as string || '';
+
   const {
     state,
     toggleSignIn,
@@ -41,7 +45,7 @@ const Auth = () => {
     toggleRecover,
     handleSubmit,
     handleBack,
-  } = useFormState();
+  } = useFormState(method);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
@@ -62,6 +66,7 @@ const Auth = () => {
   const handleBlur = () => {
     setFocusedField("");
   };
+
 
   return (
     <div className="flex flex-col bg-image bg-no-repeat bg-cover bg-center h-[902px] w-full relative items-center justify-center">
@@ -85,7 +90,7 @@ const Auth = () => {
         <div className="flex flex-col p-5">
           <div className="flex flex-col space-y-3">
             {state.recover && (
-              <div className="flex items-center  h-[210px]  justify-center">
+              <div className="flex items-center my-10 h-[210px]  justify-center">
                 <p className="flex items-center justify-center bg-[#57B3AC82] w-[203px] h-[203px] rounded-full">
                   {" "}
                   <PiLock className="text-[100px] text-white" />
