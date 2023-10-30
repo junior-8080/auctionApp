@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { BsDot } from "react-icons/bs";
 import { PiWarningCircleLight } from "react-icons/pi";
 
 const ProductCard = () => {
   return (
+    <Link href='/productDetails/544'>
     <div className="p-3 h-628 rounded-2xl border">
       <div className="relative">
         <Image src="/assets/Car1.svg" width={472} height={277} alt="product" />
@@ -66,6 +68,7 @@ const ProductCard = () => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 

@@ -5,8 +5,8 @@ import { RiEqualizerLine } from "react-icons/ri";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col bg-image bg-no-repeat bg-cover bg-center h-[902px] w-screen relative items-center justify-center">
-      <div className="bg-teal w-screen h-[902px] absolute opacity-70 " />
+    <section className="flex flex-col bg-image bg-no-repeat bg-cover bg-center h-[400px] w-screen relative items-center justify-center">
+      <div className="bg-teal w-screen h-[400px] absolute opacity-70 " />
       <div className="flex flex-col w-[900px] items-center text-center z-50">
         <p className="text-[71px] font-bold z-50">{homeText.heroLgText}</p>
         <p className="flex w-[560px]">
@@ -16,7 +16,7 @@ const HeroSection = () => {
         </p>
       </div>
 
-      <div className="flex bg-white items-center rounded-xl shadow-md px-5 z-50 h-[102px] absolute -bottom-14">
+      <div className="flex  bg-white items-center rounded-xl shadow-md px-5 z-50 h-[102px] absolute -bottom-14">
         <div className="flex gap-3 items-center pr-4 text-[20px] text-black-500">
           <select
             className="bg-transparent appearance-none text-xl text-black-500 items-center p-3 outline-none"
@@ -52,7 +52,7 @@ const HeroSection = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

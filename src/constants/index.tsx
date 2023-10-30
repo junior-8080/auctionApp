@@ -1,5 +1,5 @@
 export const homeText = {
-  heroLgText: `Say hello to your next awesome Itmes`,
+  heroLgText: `Say hello to your next awesome Items`,
   heroSmText: `Featuring Used, Wholesale and Salvage Cars, Trucks & SUVs for Sale`,
   featureText: [
     {

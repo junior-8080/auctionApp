@@ -12,7 +12,10 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <Features />
-      <ProductListing />
+      <section className="flex flex-col pl-20 gap-4 pr-20">
+        <ProductListing caption="ENDING SOON AUCTIONS" />
+        <ProductListing caption="LATEST AUCTIONS" />
+      </section>
       <ContactForm />
       <Footer />
     </main>

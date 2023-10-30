@@ -30,7 +30,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex m-28">
+    <section className="flex m-28">
       <div className="flex flex-col -m-10 gap-10">
         <p className="text-[32px] font-bold text-center text-textBlack">
           CONTACT US
@@ -91,7 +91,7 @@ const ContactForm = () => {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 
