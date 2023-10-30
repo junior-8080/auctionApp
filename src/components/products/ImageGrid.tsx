@@ -10,7 +10,7 @@ const ImageGrid = () => {
             <Image
               width={300}
               height={200}
-              alt="gallery"
+              alt=""
               className="block h-full w-full object-cover object-center"
               src="/assets/img1.svg"
             />
@@ -21,7 +21,7 @@ const ImageGrid = () => {
             <Image
               width={120}
               height={100}
-              alt="gallery"
+              alt=""
               className="block h-full w-full object-cover object-center"
               src="/assets/img.svg"
             />
@@ -30,7 +30,7 @@ const ImageGrid = () => {
             <Image
               width={120}
               height={100}
-              alt="gallery"
+              alt=""
               className="block h-full w-full object-cover object-center"
               src="/assets/img2.svg"
             />
@@ -40,7 +40,7 @@ const ImageGrid = () => {
               <Image
                 width={120}
                 height={100}
-                alt="gallery"
+                alt=""
                 className="block h-full w-full object-cover object-center opacity-75"
                 src="/assets/img2.svg"
               />
