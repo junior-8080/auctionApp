@@ -13,8 +13,16 @@ export default function Home() {
       <HeroSection />
       <Features />
       <section className="flex flex-col pl-20 gap-4 pr-20">
-        <ProductListing caption="ENDING SOON AUCTIONS" />
-        <ProductListing caption="LATEST AUCTIONS" />
+        <ProductListing
+          auctionPage={false}
+          flexCard={false}
+          caption="ENDING SOON AUCTIONS"
+        />
+        <ProductListing
+          auctionPage={false}
+          flexCard={false}
+          caption="LATEST AUCTIONS"
+        />
       </section>
       <ContactForm />
       <Footer />
