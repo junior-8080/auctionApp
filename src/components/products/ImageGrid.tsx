@@ -1,10 +1,9 @@
 import Image from "next/image";
-import React from "react";
 
 const ImageGrid = () => {
   return (
-    <div className="container bg-white py-2 ">
-      <div className=" flex flex-wrap md:-m-2">
+    <div className="py-2 ">
+      <div className=" flex flex-wrap ">
         <div className="flex w-3/5 flex-wrap">
           <div className="w-full">
             <Image
@@ -26,7 +25,7 @@ const ImageGrid = () => {
               src="/assets/img.svg"
             />
           </div>
-          <div className="w-1/2 p-1 pb-0 ">
+          <div className="w-1/2 p-1 pl-2 pb-0 ">
             <Image
               width={120}
               height={100}
@@ -35,8 +34,8 @@ const ImageGrid = () => {
               src="/assets/img2.svg"
             />
           </div>
-          <div className="relative w-1/2 p-1 pb-0">
-            <div className="relative">
+          <div className="relative w-1/2 p-1 pr-0 pb-0">
+            <div className="h-full">
               <Image
                 width={120}
                 height={100}
@@ -44,7 +43,7 @@ const ImageGrid = () => {
                 className="block h-full w-full object-cover object-center opacity-75"
                 src="/assets/img2.svg"
               />
-              <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded">
+              <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white bg-black bg-opacity-50 rounded">
                 +14 photos
               </p>
             </div>

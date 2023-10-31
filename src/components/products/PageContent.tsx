@@ -271,7 +271,14 @@ const PageContent = () => {
                 products.{" "}
               </p>
             </div>
-            <div></div>
+            <div className="flex h-full border-none w-full relative">
+              <Image
+                src="/assets/Map.svg"
+                width={500}
+                height={100}
+                alt="logo"
+              />
+            </div>
           </div>
         </div>
 
