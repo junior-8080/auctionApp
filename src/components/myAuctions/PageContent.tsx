@@ -1,12 +1,16 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import ProductListing from "../products/ProductListing";
-import { MdArrowRight, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import PostAuctionForm from "./PostAuctionForm";
 
 const PageContent = () => {
+  const [showPostForm, setShowPostForm] = useState(false);
+  
   return (
-    <main className="px-20 pb-20">
-      <div className="flex flex-col  space-y-6 pb-8">
+    <main className="flex flex-col">
+      <div className="flex flex-col  space-y-6 px-20 ">
         <p className="text-grey">Home/My Auctions</p>
         <div className="flex items-center  gap-10 text-grey">
           <p className="px-8 py-2  border text-center">All</p>
@@ -30,16 +34,21 @@ const PageContent = () => {
         </div>
       </div>
 
-    <ProductListing caption={""} auctionPage={true} flexCard={true} />
-
-      <div className="text-smbold flex gap-10 items-center">
+      <div className=" px-20 ">
+        <ProductListing caption={""} auctionPage={true} flexCard={true} />
+      </div>
+      <div className="text-smbold flex gap-10 items-center px-20 mb-20">
         <p className="bg-teal py-2 px-5 rounded-lg text-white">1</p>
         <p>2</p>
         <p>3</p>
         <p>4</p>
         <p>5</p>
-        <button className="flex items-center border rounded-lg font-[400] text-grey py-2 px-5 ">Next <MdOutlineKeyboardArrowRight className='ml-2' /></button>
+        <button className="flex items-center border rounded-lg font-[400] text-grey py-2 px-5 ">
+          Next <MdOutlineKeyboardArrowRight className="ml-2" />
+        </button>
       </div>
+
+      <PostAuctionForm />
     </main>
   );
 };
