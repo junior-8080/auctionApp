@@ -1,5 +1,5 @@
 "use client";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { BsFillCheckCircleFill, BsGoogle, BsTwitter } from "react-icons/bs";
 import {
   BiArrowBack,
@@ -13,30 +13,14 @@ import { IoMdLock } from "react-icons/io";
 import useFormState from "@/hooks/useFormState";
 import { PiLock } from "react-icons/pi";
 import { useParams } from "next/navigation";
-
-type FormData = {
-  email: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-  confirmPassword: string;
-  agreement: boolean;
-  rememberMe: boolean;
-};
+import { AuthFormData } from "@/constants/types";
+import { INITIAL_STATES } from "@/constants";
 
 const Auth = () => {
-  const [formData, setFormData] = useState<FormData>({
-    email: "",
-    firstName: "",
-    lastName: "",
-    password: "",
-    confirmPassword: "",
-    agreement: false,
-    rememberMe: false,
-  });
+  const [formData, setFormData] = useState<AuthFormData>(INITIAL_STATES.AUTH);
 
   const params = useParams();
-  const method = params.method as string || '';
+  const method = (params.method as string) || "";
 
   const {
     state,
@@ -66,7 +50,6 @@ const Auth = () => {
   const handleBlur = () => {
     setFocusedField("");
   };
-
 
   return (
     <div className="flex flex-col bg-image bg-no-repeat bg-cover bg-center h-[902px] w-full relative items-center justify-center">

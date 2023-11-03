@@ -17,3 +17,39 @@ export const homeText = {
     },
   ],
 };
+
+export const INITIAL_STATES = {
+  POST_AUCTION: {
+    make: "",
+    region: "",
+    product_name: "",
+    attribute: "",
+    description: "",
+    image: "",
+    starting_price: 0,
+    buy_now_price: 0,
+    reserve_price: 0,
+    duration: 0,
+    buyer_deposit: false,
+    amount: 0,
+    bid_type: "",
+    buy_now_checked: false,
+    reserve_price_checked: false,
+  },
+  CONTACT_US: {
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  },
+  AUTH: {
+    email: "",
+    firstName: "",
+    lastName: "",
+    password: "",
+    confirmPassword: "",
+    agreement: false,
+    rememberMe: false,
+  },
+};

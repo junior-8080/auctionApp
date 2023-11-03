@@ -1,4 +1,5 @@
 "use client";
+import { INITIAL_STATES } from "@/constants";
 import React, { useState, ChangeEvent } from "react";
 
 interface FormData {
@@ -10,13 +11,7 @@ interface FormData {
 }
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState<FormData>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState<FormData>(INITIAL_STATES.CONTACT_US);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
