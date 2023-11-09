@@ -1,4 +1,5 @@
 "use client";
+import { routes } from "@/lib/routes";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -13,7 +14,7 @@ const ProductCard = ({
   auctionPage: boolean;
 }) => {
   return (
-    <Link href="/productDetails/544">
+    <Link href={`${routes.product}/6`}>
       <div
         className={`${
           flexCard ? "flex-row gap-6" : "flex-col"

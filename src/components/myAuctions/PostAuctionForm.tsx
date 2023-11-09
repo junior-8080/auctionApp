@@ -5,18 +5,26 @@ import { HiOutlinePhoto } from "react-icons/hi2";
 import { IoClose } from "react-icons/io5";
 import InputField from "../InputField";
 
-const PostAuctionForm = ({}) => {
+const PostAuctionForm = ({
+  toggleShowPostForm,
+}: {
+  toggleShowPostForm: any;
+}) => {
   const [formData, setFormData] = useState<PostFormData>(
     INITIAL_STATES.POST_AUCTION
   );
 
-  const [selectedFile, setSelectedFile] = useState(null);
-
-  // Function to handle file selection
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files[0];
-    setSelectedFile(file);
-    // You can perform other operations like previewing the image or preparing for upload here
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setFormData({
+        ...formData,
+        image: reader.result,
+      });
+    };
+    reader.readAsDataURL(file);
   };
 
   const [focusedField, setFocusedField] = useState("");
@@ -58,7 +66,10 @@ const PostAuctionForm = ({}) => {
           <p className="font-bold text-2xl flex-1 text-center">
             Post an auctions
           </p>
-          <IoClose className="text-[22px]" />
+          <IoClose
+            onClick={toggleShowPostForm}
+            className="cursor-pointer text-[22px]"
+          />
         </div>
 
         <div className="custom-scrollbar overflow-y-auto  mt-14">
@@ -169,7 +180,7 @@ const PostAuctionForm = ({}) => {
                   type="file"
                   style={{ display: "none" }}
                   onChange={(e) => handleFileChange(e)}
-                  multiple // If you want to allow multiple file selection
+                  multiple
                 />
               </div>
             </>
@@ -190,11 +201,11 @@ const PostAuctionForm = ({}) => {
                 handleBlur={handleBlur}
               />
               <InputField
-                checked_label="Reserve Price"
-                checked_fieldName="reserve_price"
+                checked_label="Buy Now"
+                checked_fieldName="buy_now_checked"
                 fieldType="textInput"
-                label="Enter Buy now prics"
-                fieldName="starting_price"
+                label="Enter Buy now Prics"
+                fieldName="buy_now_price"
                 desc="Price to start bids on( Lower prices encourage more bids)"
                 type="checkbox"
                 handleChange={handleChange}
@@ -204,11 +215,11 @@ const PostAuctionForm = ({}) => {
                 handleBlur={handleBlur}
               />
               <InputField
-                checked_label="Buy Now"
-                checked_fieldName="buy_now_price"
+                checked_label="Reserve Price"
+                checked_fieldName="reserve_price_checked"
                 fieldType="textInput"
-                label="Enter Starting Price"
-                fieldName="starting_price"
+                label="Enter Reserve Prics"
+                fieldName="reserve_price"
                 desc="Price to start bids on( Lower prices encourage more bids)"
                 type="checkbox"
                 handleChange={handleChange}

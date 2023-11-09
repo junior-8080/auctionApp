@@ -5,10 +5,10 @@ import { RiEqualizerLine } from "react-icons/ri";
 
 const HeroSection = () => {
   return (
-    <section className="flex flex-col bg-image bg-no-repeat bg-cover bg-center h-[400px] w-screen relative items-center justify-center">
+    <section className="flex flex-col z-20 bg-image bg-no-repeat bg-cover bg-center h-[400px] w-screen relative items-center justify-center">
       <div className="bg-teal w-screen h-[400px] absolute opacity-70 " />
-      <div className="flex flex-col w-[900px] items-center text-center z-50">
-        <p className="text-[71px] font-bold z-50">
+      <div className="pb-4 flex flex-col w-[900px] items-center text-center z-20">
+        <p className="text-[71px] font-bold z-20">
           {homeText.heroLgText}
         </p>
         <p className="flex w-[560px]">

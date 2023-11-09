@@ -6,6 +6,8 @@ import Link from "next/link";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { AiFillCaretDown } from "react-icons/ai";
 import { BsFillCameraFill } from "react-icons/bs";
+import PostAuctionForm from "./myAuctions/PostAuctionForm";
+import { routes } from "@/lib/routes";
 
 const Navbar = () => {
   const user = true;
@@ -20,12 +22,12 @@ const Navbar = () => {
     setShowPostForm((prevState) => !prevState);
   };
   return (
-    <nav className={"flex flex-col w-full "}>
+    <nav className={"flex flex-col w-full z-50"}>
       <div className={"flex   bg-teal p-3"}>
         <div className={"flex flex-1 items-center gap-10 pl-20"}>
-          <p>Help</p>
-          <p>How to buy</p>
-          <p>How to sell</p>
+          <Link href={routes.help}>Help</Link>
+          <Link href={routes.howToBuy}>How to buy</Link>
+          <Link href={routes.howToSell}>How to sell</Link>
         </div>
         <div className={"flex gap-2 items-center pr-20"}>
           <p>Cart</p>
@@ -41,20 +43,36 @@ const Navbar = () => {
           <ul className="flex items-center  gap-8  -pr-10 justify-end text-gray-900 ">
             {user && (
               <>
-                <li>Dashboard</li>
-                <li>Premium Services</li>
+                <Link href={routes.dashboard}>
+                  <li>Dashboard</li>
+                </Link>
+                <Link href={routes.premiumServices}>
+                  <li>Premium Services</li>
+                </Link>
               </>
             )}
-            <li className="flex items-center text-teal font-bold border-b-4 border-teal h-24 ">
+            <Link
+              href={routes.myAuctions}
+              className="flex items-center text-teal font-bold border-b-4 border-teal h-24 "
+            >
               {user ? "My " : ""}Auctions
-            </li>
-            <li>About us</li>
-            <li>FAQ</li>
-            <li>Contact</li>
+            </Link>
+            <Link href={routes.aboutUs}>
+              <li>About us</li>
+            </Link>
+            <Link href={routes.faq}>
+              <li>FAQ</li>
+            </Link>
+            <Link href={routes.contact}>
+              <li>Contact</li>
+            </Link>
           </ul>
           {user ? (
             <div className={"flex items-center font-bold mr-8 gap-5"}>
-              <button className="bg-teal font-bold text-lg text-center w-40 text-white rounded-md h-11 ">
+              <button
+                onClick={toggleShowPostForm}
+                className="bg-teal font-bold text-lg text-center w-40 text-white rounded-md h-11 "
+              >
                 Post an Auction
               </button>
               <IoIosNotificationsOutline className="text-3xl cursor-pointer text-grey" />
@@ -70,13 +88,13 @@ const Navbar = () => {
             </div>
           ) : (
             <div className={"flex font-bold mr-8 -500 w-60 gap-4"}>
-              <Link href={"/auth/login"}>
+              <Link href={routes.signup}>
                 {" "}
                 <button className="bg-teal text-center p-1 text-white rounded-md h-82 w-36">
                   Login
                 </button>
               </Link>
-              <Link href={"/auth/signup"}>
+              <Link href={routes.signup}>
                 <button className="bg-white border text-teal-500 p-1 border-teal-500 rounded-md h-82 w-36 ">
                   Sign up
                 </button>
@@ -118,6 +136,10 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+
+      {showPostForm && (
+        <PostAuctionForm toggleShowPostForm={toggleShowPostForm} />
+      )}
     </nav>
   );
 };

@@ -7,21 +7,23 @@ export type AuthFormData = {
   agreement: boolean;
   rememberMe: boolean;
 };
-
 export interface PostFormData {
+  image: null;
   make: string;
+  amount: number;
   region: string;
-  product_name: string;
+  duration: number;
+  bid_type: string;
   attribute: string;
   description: string;
-  image: string;
-  starting_price: number;
-  buy_now_price: number;
+  product_name: string;
   reserve_price: number;
-  duration: number;
-  amount: number;
-  bid_type: string;
-  buy_now_checked: boolean;
-  reserve_price_checked: boolean;
+  buy_now_price: number;
+  starting_price: number;
   buyer_deposit: boolean;
+  buy_now_checked: boolean;
+  customized_biding: string;
+  amount_biding_checked: boolean;
+  reserve_price_checked: boolean;
+  percentage_biding_checked: boolean;
 }

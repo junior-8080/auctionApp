@@ -1,4 +1,3 @@
-import { PostFormData } from "@/constants/types";
 import React from "react";
 
 const InputField = ({
@@ -65,10 +64,10 @@ const InputField = ({
           {type?.length > 0 && (
             <p className="flex mb-2 items-center text-textBlack">
               <input
+                id={checked_fieldName}
                 className=" h-4 w-4 bg-[#F5F6F7]  checked:border checked:border-teal mr-2"
                 type={type}
                 name={checked_fieldName}
-                checked={formData[checked_fieldName] === "on"}
                 onChange={(e) => handleChange(e)}
               />
               <span> {checked_label}</span>
@@ -93,7 +92,7 @@ const InputField = ({
               <input
                 id={fieldName}
                 className="flex-1 px-2 py-1 text-textBlack focus:outline-none  outline-none"
-                type="text"
+                type={`${fieldName === "product_name" ? "text" : "number"}`}
                 name={fieldName}
                 onFocus={() => handleFocus(fieldName)}
                 onBlur={handleBlur}

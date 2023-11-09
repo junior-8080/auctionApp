@@ -1,3 +1,15 @@
-export const Routes = {
+export const routes = {
   home: "/",
+  dashboard: "/#dashboard",
+  myAuctions: "/my-auctions",
+  premiumServices: "/#premium-services",
+  contact: "/#contact",
+  faq: "/#faq",
+  aboutUs: "/#about-us",
+  help: "/#help",
+  howToBuy: "/#how-to-buy",
+  howToSell: "/#how-to-sell",
+  signup: "/#auth/signup",
+  signin: "/#auth/login",
+  product:"/productDetails",
 };

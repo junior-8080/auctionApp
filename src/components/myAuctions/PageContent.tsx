@@ -47,8 +47,6 @@ const PageContent = () => {
           Next <MdOutlineKeyboardArrowRight className="ml-2" />
         </button>
       </div>
-
-      <PostAuctionForm />
     </main>
   );
 };
