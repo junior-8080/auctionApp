@@ -53,3 +53,58 @@ export const INITIAL_STATES = {
     rememberMe: false,
   },
 };
+
+export const AUCTION_PROPERTIES = {
+  accordionItems: [
+    {
+      title: "Year",
+      checkboxes: ["2020", "2021", "2022"],
+    },
+    {
+      title: "Model",
+      checkboxes: ["Sedan", "SUV", "Truck"],
+    },
+    {
+      title: "Make",
+      checkboxes: ["Toyota", "Ford", "Honda"],
+    },
+    {
+      title: "Transmission",
+      checkboxes: ["Automatic", "Manual"],
+    },
+    {
+      title: "Body style",
+      checkboxes: ["Hatchback", "Convertible", "Coupe"],
+    },
+    {
+      title: "Engine",
+      checkboxes: ["3.5 V-6 cyl", "3.7 V-6 cyl", "4.5 V-5 cyl"],
+    },
+    {
+      title: "Drive train",
+      checkboxes: ["4WD", "RWD"],
+      subItems: [
+        {
+          title: "Engine",
+          checkboxes: ["3.5 V-6 cyl", "3.7 V-6 cyl", "4.5 V-5 cyl"],
+        },
+      ],
+    },
+    {
+      title: "Interior",
+      checkboxes: ["Leather", "Cloth"],
+    },
+    {
+      title: "Color",
+      checkboxes: ["Red", "Blue", "Green"],
+    },
+    {
+      title: "Price",
+      checkboxes: ["GHS15,700", "GHS25,000", "GHS38,990"],
+    },
+    {
+      title: "Features",
+      checkboxes: ["Bluetooth", "Navigation", "Sunroof"],
+    },
+  ],
+};

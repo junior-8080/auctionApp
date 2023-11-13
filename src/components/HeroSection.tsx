@@ -1,4 +1,4 @@
-import { homeText } from "@/constants";
+import { homeText } from "@/constants/data";
 import { BsCaretDownFill, BsSearch } from "react-icons/bs";
 import { LuSearch } from "react-icons/lu";
 import { RiEqualizerLine } from "react-icons/ri";

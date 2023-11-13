@@ -1,4 +1,4 @@
-import { INITIAL_STATES } from "@/constants";
+import { INITIAL_STATES } from "@/constants/data";
 import { PostFormData } from "@/constants/types";
 import React, { ChangeEvent, useState } from "react";
 import { HiOutlinePhoto } from "react-icons/hi2";

@@ -14,15 +14,13 @@ export default function Home() {
       <Features />
       <section className="flex flex-col pl-20 gap-4 pr-20">
         <ProductListing
-          auctionPage={false}
+          myAuctionPage={false}
           flexCard={false}
-          caption="ENDING SOON AUCTIONS"
-        />
+          caption="ENDING SOON AUCTIONS" auctionList={false}        />
         <ProductListing
-          auctionPage={false}
+          myAuctionPage={false}
           flexCard={false}
-          caption="LATEST AUCTIONS"
-        />
+          caption="LATEST AUCTIONS" auctionList={false}        />
       </section>
       <ContactForm />
       <Footer />

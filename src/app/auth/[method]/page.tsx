@@ -14,7 +14,7 @@ import useFormState from "@/hooks/useFormState";
 import { PiLock } from "react-icons/pi";
 import { useParams } from "next/navigation";
 import { AuthFormData } from "@/constants/types";
-import { INITIAL_STATES } from "@/constants";
+import { INITIAL_STATES } from "@/constants/data";
 
 const Auth = () => {
   const [formData, setFormData] = useState<AuthFormData>(INITIAL_STATES.AUTH);

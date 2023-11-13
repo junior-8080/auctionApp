@@ -1,5 +1,5 @@
 "use client";
-import { INITIAL_STATES } from "@/constants";
+import { INITIAL_STATES } from "@/constants/data";
 import React, { useState, ChangeEvent } from "react";
 
 interface FormData {

@@ -5,11 +5,13 @@ import ProductCard from "./ProductCard";
 const ProductListing = ({
   caption,
   flexCard,
-  auctionPage,
+  myAuctionPage,
+  auctionList,
 }: {
   caption: string;
   flexCard: boolean;
-  auctionPage: boolean;
+  myAuctionPage: boolean;
+  auctionList:boolean;
 }) => {
   const products = [1, 2, 3, ];
 
@@ -38,8 +40,9 @@ const ProductListing = ({
         >
           {products.map((product, i) => (
             <ProductCard
-              auctionPage={auctionPage}
+              myAuctionPage={myAuctionPage}
               flexCard={flexCard}
+              auctionList={auctionList}
             />
           ))}
         </div>

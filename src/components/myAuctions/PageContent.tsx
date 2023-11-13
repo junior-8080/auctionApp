@@ -35,7 +35,7 @@ const PageContent = () => {
       </div>
 
       <div className=" px-20 ">
-        <ProductListing caption={""} auctionPage={true} flexCard={true} />
+        <ProductListing caption={""} myAuctionPage={true} flexCard={true} auctionList={false} />
       </div>
       <div className="text-smbold flex gap-10 items-center px-20 mb-20">
         <p className="bg-teal py-2 px-5 rounded-lg text-white">1</p>

@@ -8,10 +8,12 @@ import { PiWarningCircleLight } from "react-icons/pi";
 
 const ProductCard = ({
   flexCard,
-  auctionPage,
+  myAuctionPage,
+  auctionList,
 }: {
   flexCard: boolean;
-  auctionPage: boolean;
+  myAuctionPage: boolean;
+  auctionList: boolean;
 }) => {
   return (
     <Link href={`${routes.product}/6`}>
@@ -22,9 +24,9 @@ const ProductCard = ({
       >
         <div className="relative">
           <Image
-            className={`${flexCard && "h-full"}`}
+            className={`${flexCard && "h-full w-full "}`}
             src="/assets/Car1.svg"
-            width={`${auctionPage ? 500 : flexCard ? 280 : 472}`}
+            width={`${myAuctionPage ? 500 : flexCard ? 280 : 472}`}
             height={`${flexCard ? 300 : 277}`}
             alt="product"
           />
@@ -36,12 +38,12 @@ const ProductCard = ({
         </div>
 
         <div
-          className={`flex flex-col ${
-            auctionPage && "gap-4"
+          className={`flex  justify-around flex-1 flex-col ${
+            myAuctionPage && "gap-4"
           } text-black-500 pt-3 pb-1 `}
         >
           <div className="flex flex-col">
-            {auctionPage && (
+            {myAuctionPage && (
               <div className="flex justify-between items-center">
                 <p className="bg-[#ffeab1] rounded-lg text-[#FFBA02] font-bold px-8 py-2 mb-2">
                   Home Use
@@ -63,7 +65,7 @@ const ProductCard = ({
             </p>
           </div>
 
-          {!auctionPage && (
+          {!myAuctionPage && (
             <div className="flex mt-4 mb-4 ">
               <div className="w-58 h-54 rounded-md border p-1">
                 <Image
@@ -80,7 +82,7 @@ const ProductCard = ({
             </div>
           )}
 
-          {flexCard && (
+          {!auctionList && (
             <>
               <div className="flex gap-12 items-center">
                 <p className="flex flex-col">
@@ -89,16 +91,16 @@ const ProductCard = ({
                 </p>
                 <BsSlashLg
                   className={`${
-                    auctionPage ? "flex h-16 w-10 text-[#E4E6E8] " : "hidden"
+                    myAuctionPage ? "flex h-16 w-10 text-[#E4E6E8] " : "hidden"
                   }`}
                 />
-                <p className={`flex flex-col ${!auctionPage && "hidden"}`}>
+                <p className={`flex flex-col ${!myAuctionPage && "hidden"}`}>
                   <span className="font-bold text-lg">Sunday, 9:38PM</span>
                   <span className="text-gray-400">Auction Ending</span>
                 </p>
                 <BsSlashLg
                   className={`${
-                    auctionPage ? "flex h-16 w-10 text-[#E4E6E8] " : "hidden"
+                    myAuctionPage ? "flex h-16 w-10 text-[#E4E6E8] " : "hidden"
                   }`}
                 />
                 <p className="flex flex-col">
@@ -107,7 +109,7 @@ const ProductCard = ({
                 </p>
                 <BsSlashLg
                   className={`${
-                    auctionPage ? "flex h-16 w-10 text-[#E4E6E8] " : "hidden"
+                    myAuctionPage ? "flex h-16 w-10 text-[#E4E6E8] " : "hidden"
                   }`}
                 />
                 <p className="flex flex-col">
@@ -119,7 +121,7 @@ const ProductCard = ({
           )}
 
           <div className={`flex  justify-between items-center -mt-1`}>
-            {auctionPage && (
+            {myAuctionPage && (
               <div className="flex text-sm w-9/12 flex-col justify-center rounded-lg g px-2 py-2 bg-transparent border h-[50px]">
                 <p className=" text-grey ">Enter your bid (Minimum $14,500)</p>
                 <input
@@ -133,13 +135,13 @@ const ProductCard = ({
                 />
               </div>
             )}
-
+            {auctionList && <p className="text-bold">$21,480</p>}
             {flexCard && (
               <button className="bg-teal px-6 h-[50px] rounded-md text-base font-bold text-white ">
-                {auctionPage ? "Place Bid" : " View Auction"}
+                {myAuctionPage ? "Place Bid" : " View Auction"}
               </button>
             )}
-            {!auctionPage && !flexCard && (
+            {!myAuctionPage && !flexCard && (
               <div className="w-full justify-center items-center mt-5">
                 <button className="bg-teal h-16 rounded-md text-2xl font-bold text-white w-full">
                   Place Bid

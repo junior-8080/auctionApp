@@ -1,4 +1,4 @@
-import { homeText } from "@/constants";
+import { homeText } from "@/constants/data";
 import React from "react";
 
 const Features = () => {

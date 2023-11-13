@@ -283,7 +283,7 @@ const PageContent = () => {
         </div>
 
         <div className="pt-10 pb-20">
-          <ProductListing auctionPage={false}  flexCard={false} caption="RELATED PRODUCTS" />
+          <ProductListing myAuctionPage={false} flexCard={false} caption="RELATED PRODUCTS" auctionList={false} />
         </div>
       </div>
     </div>
