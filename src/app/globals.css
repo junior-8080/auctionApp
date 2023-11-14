@@ -39,11 +39,13 @@ body {
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
-    background: #FFFFFF; 
+    background: lightgrey; 
+    border-radius: 10px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
     background-color: teal; 
+    border-radius: 10px;
   }
 
   .custom-scrollbar {

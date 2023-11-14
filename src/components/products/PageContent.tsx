@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import {
   BsFillFuelPumpFill,
   BsFillLightningFill,
@@ -21,10 +22,13 @@ import Image from "next/image";
 import { RiCalendar2Fill, RiKeyboardBoxLine } from "react-icons/ri";
 import { IoMdFlashlight } from "react-icons/io";
 import { LuArrowUpDown } from "react-icons/lu";
+import BidingHistoryModal from "./BidingHistoryModal";
 import ProductListing from "./ProductListing";
 import ImageGrid from "./ImageGrid";
 
 const PageContent = () => {
+  const [showHistoryModal, setShowHistoryModal] = useState(false);
+
   return (
     <div>
       <div className=" bg-white">
@@ -165,6 +169,7 @@ const PageContent = () => {
                 <button
                   className="h-[72px] text-xl my-2 rounded-lg bg-grey"
                   type="button"
+                  onClick={() => setShowHistoryModal(true)}
                 >
                   View Bid History
                 </button>
@@ -283,9 +288,19 @@ const PageContent = () => {
         </div>
 
         <div className="pt-10 pb-20">
-          <ProductListing myAuctionPage={false} flexCard={false} caption="RELATED PRODUCTS" auctionList={false} />
+          <ProductListing
+            myAuctionPage={false}
+            flexCard={false}
+            caption="RELATED PRODUCTS"
+            auctionList={false}
+          />
         </div>
       </div>
+      {showHistoryModal ? (
+        <BidingHistoryModal setShowHistoryModal={setShowHistoryModal} />
+      ) : (
+        ""
+      )}
     </div>
   );
 };
