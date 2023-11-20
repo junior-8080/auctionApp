@@ -4,14 +4,14 @@ type Props = {
   label: string;
   id: string;
   placeholder: string;
-  type: "email" | "password" | "text";
+  type?: "email" | "password" | "text";
   errorMessage?: string;
   name?: string;
 };
 
 const BaseInput = forwardRef(
   (
-    { label, id, placeholder, type, errorMessage, ...rest }: Props,
+    { label, id, placeholder, type = "text", errorMessage, ...rest }: Props,
     ref: Ref<HTMLInputElement>,
   ) => {
     return (

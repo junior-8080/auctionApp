@@ -1,7 +1,7 @@
-import BaseInput from '@/components/BaseInput';
-import React from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-
+"use client";
+import BaseInput from "@/components/BaseInput";
+import React from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 type FormValues = {
   email: string;
@@ -12,25 +12,24 @@ type FormValues = {
 };
 
 const SignUpFormOne = () => {
-  const {
-    register,
-    handleSubmit
-  } = useForm<FormValues>();
+  const { register, handleSubmit } = useForm<FormValues>();
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
-    
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col items-center"
+    >
       <BaseInput
         label="Email"
         id="email"
         placeholder="Enter email"
         type="email"
-        {...register('email', {
-          required: 'Email is required',      
+        {...register("email", {
+          required: "Email is required",
         })}
       />
 
@@ -41,8 +40,8 @@ const SignUpFormOne = () => {
             id="firstName"
             placeholder="Enter first name"
             type="text"
-            {...register('firstName', {
-              required: 'First name is required',
+            {...register("firstName", {
+              required: "First name is required",
             })}
           />
         </div>
@@ -52,8 +51,8 @@ const SignUpFormOne = () => {
             id="lastName"
             placeholder="Enter last name"
             type="text"
-            {...register('lastName', {
-              required: 'Last name is required',
+            {...register("lastName", {
+              required: "Last name is required",
             })}
           />
         </div>
@@ -64,8 +63,8 @@ const SignUpFormOne = () => {
         id="password"
         placeholder="Enter password"
         type="password"
-        {...register('password', {
-          required: 'Password is required',
+        {...register("password", {
+          required: "Password is required",
         })}
       />
 
@@ -74,8 +73,8 @@ const SignUpFormOne = () => {
         id="confirmPassword"
         placeholder="Confirm password"
         type="password"
-        {...register('confirmPassword', {
-          required: 'Please confirm your password',
+        {...register("confirmPassword", {
+          required: "Please confirm your password",
         })}
       />
 
@@ -90,4 +89,3 @@ const SignUpFormOne = () => {
 };
 
 export default SignUpFormOne;
-
