@@ -1,0 +1,10 @@
+.btn-submit {
+    background-color: #79BDBC !important;
+}
+.btn-submit:hover {
+    background-color: #4e9f9e !important;
+}
+
+.terms {
+    margin-right: 16rem !important;
+}
