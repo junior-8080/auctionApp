@@ -1,19 +1,41 @@
-import React from "react";
-import FormWrapper from "@auth/components/FormWrapper";
-import { PiLock } from "react-icons/pi";
+import BaseInput from '@/components/BaseInput';
+import React from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
-function RecoverPassword() {
-  return (
-    <FormWrapper title={"Recover Password"}>
-      <div className={'className="flex flex-col space-y-3"'}>
-        <div className="flex items-center my-10 h-[210px]  justify-center">
-          <p className="flex items-center justify-center bg-[#57B3AC82] w-[203px] h-[203px] rounded-full">
-            <PiLock className="text-[100px] text-white" />
-          </p>
+type FormValues = {
+    email: string;
+};
+const RecoverPassword = () => {
+    const { register, handleSubmit } = useForm<FormValues>();
+
+    const onSubmit: SubmitHandler<FormValues> = (data) => {
+        console.log(data);
+    };
+
+    return (
+        <div className="flex flex-col items-center justify-center h-screen">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+
+                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+                    <BaseInput
+                        id={'email'}
+                        label='Email'
+                        {...register('email', {
+                            required: 'Email is required',
+                        })}
+                        type="email"
+                        placeholder="Enter your email" />
+
+                    <button
+                        type="submit"
+                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-400"
+                    >
+                        Recover
+                    </button>
+                </form>
+            </div>
         </div>
-      </div>
-    </FormWrapper>
-  );
-}
+    );
+};
 
 export default RecoverPassword;
