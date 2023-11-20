@@ -25,7 +25,7 @@ function FormWrapper(
         <p className="font-bold text-2xl flex-1 text-center">{props.title}</p>
         <IoClose className="text-[22px]" />
       </div>
-      <div>{props.children}</div>
+      <div className={"p-5"}>{props.children}</div>
     </div>
   );
 }
