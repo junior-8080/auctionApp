@@ -15,8 +15,8 @@ const BaseInput = forwardRef(
     ref: Ref<HTMLInputElement>,
   ) => {
     return (
-      <div className={"mt-5"}>
-        <div className="relative">
+      <div className={"mt-5 w-full"}>
+        <div className="relative w-full">
           <input
             autoComplete={"off"}
             {...rest}
