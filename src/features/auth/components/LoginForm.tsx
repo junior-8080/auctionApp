@@ -1,18 +1,25 @@
 import React from "react";
-import BaseInput from "@components/BaseInput";
+import { useForm, SubmitHandler } from 'react-hook-form';
+import BaseInput from "@components/BaseInput"; // Importing BaseInput from the library
+import { FormInputs } from "./lib/FormInputType";
 
 function LoginForm() {
+  const { register, handleSubmit } = useForm<FormInputs>();
+  const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data);
+  
   return (
-    <form className={"px-10 py-10"}>
+    <form onSubmit={handleSubmit(onSubmit)} className={"px-10 py-10"}>
       <div className="flex flex-col gap-y-5">
         <BaseInput
-          type={"email"}
+          type="email"
+          {...register('email')}
           id={"email"}
           placeholder={"Enter email"}
-          label={"Email"}
+          label={"Email"}        
         />
         <BaseInput
-          type={"password"}
+          type="password"
+          {...register('password')}
           id={"password"}
           placeholder={"Enter Password"}
           label={"password"}
