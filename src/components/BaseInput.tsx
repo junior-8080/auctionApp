@@ -4,7 +4,7 @@ type Props = {
   label: string;
   id: string;
   placeholder: string;
-  type: "email" | "password";
+  type: "email" | "password" | "firstName" | "lastName";
   errorMessage?: string;
   name?: string;
 };
