@@ -15,6 +15,7 @@ import { PiLock } from "react-icons/pi";
 import { useParams } from "next/navigation";
 import { AuthFormData } from "@/constants/types";
 import { INITIAL_STATES } from "@/constants/data";
+import SocialButton from "@auth/components/SocialButton";
 
 const Auth = () => {
   const [formData, setFormData] = useState<AuthFormData>(INITIAL_STATES.AUTH);
@@ -64,8 +65,8 @@ const Auth = () => {
             {state.recover
               ? "Recover Password"
               : state.signUp
-              ? "Sign Up"
-              : "Sign In"}
+                ? "Sign Up"
+                : "Sign In"}
           </p>
           <IoClose className="text-[22px]" />
         </div>
@@ -320,34 +321,15 @@ const Auth = () => {
             {state.recover
               ? "Recover"
               : state.signUp
-              ? "Sign Up"
-              : state.completed
-              ? "Open Email App & Confirm"
-              : "Sign In"}
+                ? "Sign Up"
+                : state.completed
+                  ? "Open Email App & Confirm"
+                  : "Sign In"}
           </button>
         </div>
 
         {(state.signIn || (state.signUpPage === 1 && state.signUp)) && (
-          <div className="flex -mt-5 flex-col p-5">
-            <div className="flex mb-5 gap-5 bg-red items-center text-grey">
-              <hr className="border-none h-[1px]  w-2/4  bg-[#D8D8D8]" /> Or{" "}
-              <hr className="border-none h-[1px]  w-2/4  bg-[#D8D8D8]" />
-            </div>
-            <div className="flex flex-col gap-2">
-              <button className="w-full h-[54px] justify-start  flex items-center text-grey rounded-xl border border-[#D8D8D8]">
-                <BsGoogle className="ml-5 text-xl mr-[30%]" />
-                <p>Sign Up with Google</p>
-              </button>
-              <button className="w-full h-[54px] flex items-center text-grey rounded-xl border border-[#D8D8D8]">
-                <BiLogoFacebook className="ml-5 text-xl mr-[30%]" />
-                <p>Sign Up with Facebook</p>
-              </button>
-              <button className="w-full h-[54px] justify-cstart  flex items-center text-grey rounded-xl border border-[#D8D8D8]">
-                <BsTwitter className="ml-5 text-xl mr-[30%]" />
-                <p> Sign Up with Twitter</p>
-              </button>
-            </div>
-          </div>
+          <SocialButton />
         )}
 
         {state.signUpPage != 2 && !state.recover && !state.completed && (
