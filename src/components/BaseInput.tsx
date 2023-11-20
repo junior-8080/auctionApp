@@ -6,16 +6,24 @@ type Props = {
   placeholder: string;
   type: "email" | "password";
   errorMessage?: string;
+  name?: string;
 };
 
-function BaseInput({ label, id, placeholder, type, errorMessage }: Props) {
+function BaseInput({
+  label,
+  name,
+  id,
+  placeholder,
+  type,
+  errorMessage,
+}: Props) {
   return (
     <div className={"mt-5"}>
       <div className="relative">
         <input
+          name={name}
           className="block px-2.5 py-5 text-md rounded border border-gray-300 w-full text-gray-900 bg-transparent appearance-none focus:outline-2 focus:outline-primary-500 focus:ring-0 focus:border-primary-500 peer"
           id={id}
-          name="email"
           placeholder={placeholder}
           type={type}
         />
