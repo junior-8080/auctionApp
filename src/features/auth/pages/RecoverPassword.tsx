@@ -3,6 +3,7 @@ import BaseInput from "@/components/BaseInput";
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import FormWrapper from "@auth/components/FormWrapper";
+import { PiLock } from "react-icons/pi";
 
 type FormValues = {
   email: string;
@@ -21,6 +22,12 @@ const RecoverPassword = () => {
   return (
     <FormWrapper title={"Reset Password"}>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        <div className="flex items-center my-10 h-[210px]  justify-center">
+          <p className="flex items-center justify-center bg-[#57B3AC82] w-[203px] h-[203px] rounded-full">
+            {" "}
+            <PiLock className="text-[100px] text-white" />
+          </p>
+        </div>
         <BaseInput
           id={"email"}
           label="Email"
