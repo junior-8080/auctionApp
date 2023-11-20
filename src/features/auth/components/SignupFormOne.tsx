@@ -3,7 +3,7 @@ import BaseInput from "@/components/BaseInput";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import * as Yup from "yup";
-import './signUp.css';
+// import './signUp.css';
 import { useYupResolver } from "@hooks/useYupResolver";
 
 type FormValues = {
@@ -102,10 +102,10 @@ const SignUpFormOne = () => {
       </label>
 
       <button
-        type="submit"
-        className="mt-5 bg-blue-500 w-full text-white font-bold py-3 rounded btn-submit"
+        type={"submit"}
+        className={`mt-5 w-full bg-teal rounded-lg justify-center font-bold h-[54px]`}
       >
-        Submit
+        Sign In
       </button>
     </form>
   );
