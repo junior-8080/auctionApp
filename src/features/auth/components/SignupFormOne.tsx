@@ -40,7 +40,7 @@ const SignUpFormOne = () => {
             label="First Name"
             id="firstName"
             placeholder="Enter first name"
-            type="firstName"
+            type="text"
             {...register('firstName', {
               required: 'First name is required',
             })}
@@ -51,7 +51,7 @@ const SignUpFormOne = () => {
             label="Last Name"
             id="lastName"
             placeholder="Enter last name"
-            type="lastName"
+            type="text"
             {...register('lastName', {
               required: 'Last name is required',
             })}
