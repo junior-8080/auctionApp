@@ -1,6 +1,6 @@
 
 
 export const endpoints = {
-  login: `/login`,
+  login: "/login",
   users: "/users/token",
 };
