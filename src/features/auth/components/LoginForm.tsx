@@ -2,7 +2,7 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import BaseInput from "@components/BaseInput"; // Importing BaseInput from the library
-import { FormInputs } from "./lib/FormInputType";
+import { FormInputs } from "../lib/types";
 import * as Yup from "yup";
 import { useYupResolver } from "@hooks/useYupResolver";
 
