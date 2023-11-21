@@ -2,6 +2,5 @@
 
 export const endpoints = {
   login: `/login`,
-  auth: "/auth/admin",
-  user: "/token",
+  users: "/users/token",
 };

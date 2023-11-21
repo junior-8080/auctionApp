@@ -6,5 +6,5 @@ export const authApi = {
         "email": "nyankson28@gmail.com",
         "password": "password"
     }) =>
-        api.post<LoginResponse>(endpoints.user, payload),
+        api.post<LoginResponse>(endpoints.users, payload),
 };
