@@ -1,10 +1,10 @@
 import { api, endpoints } from "@lib/api";
 import { LoginResponse } from "@auth/lib/types";
 
-export const authService = {
+export const authApi = {
     login: (payload: {
         "email": "nyankson28@gmail.com",
         "password": "password"
     }) =>
-        api.post<LoginResponse>(endpoints.auth, payload),
+        api.post<LoginResponse>(endpoints.user, payload),
 };
