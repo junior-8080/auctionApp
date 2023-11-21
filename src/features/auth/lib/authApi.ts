@@ -8,3 +8,8 @@ export const authApi = {
     }) =>
         api.post<LoginResponse>(endpoints.users, payload),
 };
+
+export const SignUp = {
+    SignUp: (payload: {userName: string, firstName: string, lastName: string, email: string, password: string}) =>
+        api.post<LoginResponse>(endpoints.users, payload),
+}
