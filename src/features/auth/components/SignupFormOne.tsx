@@ -3,6 +3,7 @@ import BaseInput from "@/components/BaseInput";
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import * as Yup from "yup";
+// import './signUp.css';
 import { useYupResolver } from "@hooks/useYupResolver";
 
 type FormValues = {
@@ -23,14 +24,10 @@ const SignUpFormOne = () => {
       confirmPassword: Yup.string()
         .oneOf([Yup.ref("password")], "Passwords must match")
         .required("Please confirm your password"),
-    }),
+    })
   );
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormValues>({ resolver, mode: "onChange" });
+  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver, mode: "onChange" });
   const [agreement, setAgreement] = useState(false); // State for checkbox
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
@@ -42,10 +39,7 @@ const SignUpFormOne = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col items-center"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col items-center">
       <BaseInput
         label="Email"
         id="email"
@@ -93,29 +87,25 @@ const SignUpFormOne = () => {
         placeholder="Confirm password"
         type="password"
         {...register("confirmPassword")}
-        errorMessage={
-          errors.confirmPassword ? errors.confirmPassword.message : ""
-        }
+        errorMessage={errors.confirmPassword ? errors.confirmPassword.message : ""}
       />
 
-      <div>
-        <label className="flex w-full items-center justify-start text-textBlack mt-4">
-          <input
-            className="h-4 w-4 bg-[#F5F6F7] appearance-none rounded-full checked:border-4 checked:border-teal mr-2"
-            type="checkbox"
-            name="agreement"
-            checked={agreement}
-            onChange={handleCheckboxChange}
-          />
-          <span> I agree with terms & conditions</span>
-        </label>
-      </div>
+      <label className="flex text-textBlack mt-4 items-center terms">
+        <input
+          className="h-4 w-4 bg-[#F5F6F7] appearance-none rounded-full checked:border-4 checked:border-teal mr-2"
+          type="checkbox"
+          name="agreement"
+          checked={agreement}
+          onChange={handleCheckboxChange}
+        />
+        <span> I agree with terms & conditions</span>
+      </label>
 
       <button
         type={"submit"}
         className={`mt-5 w-full bg-teal rounded-lg justify-center font-bold h-[54px]`}
       >
-        Sign up
+        Sign In
       </button>
     </form>
   );
