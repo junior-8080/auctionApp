@@ -1,7 +1,7 @@
 
 
 export const endpoints = {
-  login: `/login`,
-  auth: "/auth/admin",
-  user: "/token",
+  login: "/login",
+  users: "/users/token",
+  signUp: "/users/create",
 };
