@@ -5,6 +5,7 @@ import Features from "@/components/Features";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { AppProvider } from "@/features/app/AppProvider";
 
 export default function Home() {
   return (
@@ -13,14 +14,8 @@ export default function Home() {
       <HeroSection />
       <Features />
       <section className="flex flex-col pl-20 gap-4 pr-20">
-        <ProductListing
-          myAuctionPage={false}
-          flexCard={false}
-          caption="ENDING SOON AUCTIONS" auctionList={false}        />
-        <ProductListing
-          myAuctionPage={false}
-          flexCard={false}
-          caption="LATEST AUCTIONS" auctionList={false}        />
+        <ProductListing myAuctionPage={false} flexCard={false} caption="ENDING SOON AUCTIONS" auctionList={false} />
+        <ProductListing myAuctionPage={false} flexCard={false} caption="LATEST AUCTIONS" auctionList={false} />
       </section>
       <ContactForm />
       <Footer />

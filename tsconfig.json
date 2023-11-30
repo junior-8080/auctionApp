@@ -35,9 +35,6 @@
       "@account/*": [
         "./src/features/account/*"
       ],
-      "@app/*": [
-        "./src/app/*"
-      ],
       "@ui/*": [
         "./src/ui/*"
       ],
@@ -52,7 +49,10 @@
       ],
       "@components/*": [
         "./src/components/*"
-      ]
+      ],
+        "@app/*": [
+        "./src/features/app/*"
+      ],
     },
     "forceConsistentCasingInFileNames": true
   },
@@ -64,5 +64,5 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

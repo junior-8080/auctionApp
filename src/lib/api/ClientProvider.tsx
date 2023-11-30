@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  QueryClient,
-  QueryClientProvider,
-  Hydrate,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider, Hydrate } from "@tanstack/react-query";
 
 export const ReactQueryProvider: React.FC<any> = ({ pageProps, children }) => {
   const queryClientRef = React.useRef<any>();

@@ -5,6 +5,8 @@ import BaseInput from "@components/BaseInput"; // Importing BaseInput from the l
 import { FormInputs } from "../lib/types";
 import * as Yup from "yup";
 import { useYupResolver } from "@hooks/useYupResolver";
+import Link from "next/link";
+import useLogin from "../hooks/useLogin";
 
 export const loginValidationSchema = Yup.object().shape({
   email: Yup.string().required("This field is required"),
@@ -16,6 +18,7 @@ export const loginValidationSchema = Yup.object().shape({
 
 function LoginForm() {
   const resolver = useYupResolver(loginValidationSchema);
+  const { login, isLoading } = useLogin();
   const {
     register,
     handleSubmit,
@@ -24,7 +27,7 @@ function LoginForm() {
   const onSubmit: SubmitHandler<FormInputs> = (data) => console.log(data);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={"px-10 py-10"}>
+    <form onSubmit={handleSubmit(onSubmit)} className={"px-10 pt-5 "}>
       <div className="flex flex-col gap-y-5">
         <BaseInput
           type="email"
@@ -40,14 +43,11 @@ function LoginForm() {
           {...register("password")}
           id={"password"}
           placeholder={"Enter Password"}
-          label={"password"}
+          label={"Password"}
         />
       </div>
 
-      <button
-        type={"submit"}
-        className={`mt-5 w-full bg-teal rounded-lg justify-center font-bold h-[54px]`}
-      >
+      <button type={"submit"} className={`mt-5 w-full bg-teal rounded-lg justify-center font-bold h-[54px] text-white`}>
         Sign In
       </button>
     </form>

@@ -5,6 +5,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import * as Yup from "yup";
 // import './signUp.css';
 import { useYupResolver } from "@hooks/useYupResolver";
+import Link from "next/link";
 
 type FormValues = {
   email: string;
@@ -27,7 +28,11 @@ const SignUpFormOne = () => {
     })
   );
 
-  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver, mode: "onChange" });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({ resolver, mode: "onChange" });
   const [agreement, setAgreement] = useState(false); // State for checkbox
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
@@ -49,7 +54,7 @@ const SignUpFormOne = () => {
         errorMessage={errors.email ? errors.email.message : ""}
       />
 
-      <div className="flex w-full gap-x-4">
+      <div className="flex w-full gap-4">
         <div className="w-1/2">
           <BaseInput
             label="First Name"
@@ -100,13 +105,12 @@ const SignUpFormOne = () => {
         />
         <span> I agree with terms & conditions</span>
       </label>
-
-      <button
-        type={"submit"}
-        className={`mt-5 w-full bg-teal rounded-lg justify-center font-bold h-[54px]`}
-      >
-        Sign In
+      <button type={"submit"} className="mt-5 w-full bg-teal rounded-lg justify-center font-bold py-2 my-2">
+        Sign Up
       </button>
+      <Link href={"/auth/login"} className=" text-textBlack underline">
+        Sign In
+      </Link>
     </form>
   );
 };
