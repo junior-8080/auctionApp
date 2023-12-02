@@ -18,17 +18,21 @@ export type LoginBody = {
   password: string;
 };
 
-export type SignUpBody = SignUpOneBody & SignUpTwoBody;
+export type RecoverPasswordBody = {
+  email: string
+}
 
+// export type SignUpBody = SignUpOneBody & SignUpTwoBody;
+
+export type SignUpBody = SignUpOneBody
 export type SignUpOneBody = {
-  firstName: string;
-  lastName: string;
-  gender: string;
-  birthDate: string;
-  location: string;
-  other_location: string;
-  sector: string;
-  profile: string;
+  name: string;
+  email: string;
+  password: string;
+  confirm_password: string;
+  // other_location: string;
+  // sector: string;
+  // profile: string;
 };
 
 export type SignUpTwoBody = {
@@ -36,3 +40,6 @@ export type SignUpTwoBody = {
   password: string;
   public: boolean;
 };
+
+
+export type FormInputs = any

@@ -14,12 +14,10 @@ export function useSignUp() {
     const { mutate, isLoading } = useMutation({
         mutationFn: authApi.signUp,
         onSuccess: () => {
-            // alert("'Erreur', 'Une erreur est survenue.'")
             toast.success("Signup Successful")
             router.push('/login')
         },
         onError: () => {
-            // alert("'Erreur', 'Une erreur est survenue.'")
             toast.error("Something went wrong.try again")
         }
     })

@@ -20,7 +20,7 @@ export const store = configureStore({
     return appConfig.isDevelopment
       ? getDefaultMiddleware({
         serializableCheck: false
-      }).concat(logger)
+      })
       : getDefaultMiddleware({
         serializableCheck: {
           ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]

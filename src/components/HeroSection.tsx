@@ -5,23 +5,19 @@ import { RiEqualizerLine } from "react-icons/ri";
 
 const HeroSection = () => {
   return (
-    <section className="flex flex-col z-20 bg-image bg-no-repeat bg-cover bg-center h-[400px] w-screen relative items-center justify-center">
-      <div className="bg-teal w-screen h-[400px] absolute opacity-70 " />
+    <section className="flex flex-col z-20 bg-image bg-no-repeat bg-cover bg-center h-[500px] w-screen relative items-center justify-center">
+      <div className="bg-teal w-screen h-[500px] absolute opacity-70 " />
       <div className="pb-4 flex flex-col w-[900px] items-center text-center z-20">
-        <p className="text-[71px] font-bold z-20">
-          {homeText.heroLgText}
-        </p>
+        <p className="text-[71px] font-bold z-20">{homeText.heroLgText}</p>
         <p className="flex w-[560px]">
-          <span className="text-[25px] font-bold z-50">
-            {homeText.heroSmText}
-          </span>
+          <span className="text-[25px] font-bold z-50">{homeText.heroSmText}</span>
         </p>
       </div>
 
-      <div className="flex  bg-white items-center rounded-xl shadow-md px-5 z-50 h-[102px] absolute -bottom-14">
+      <div className="flex  bg-white items-center rounded-xl shadow-md px-5 z-50  absolute -bottom-14">
         <div className="flex gap-3 items-center pr-4 text-[20px] text-black-500">
           <select
-            className="bg-transparent appearance-none text-xl text-black-500 items-center p-3 outline-none"
+            className="bg-transparent appearance-none text-xl text-black-500 items-center p-2 outline-none"
             id="parent"
             name="category"
             required
@@ -46,10 +42,10 @@ const HeroSection = () => {
               aria-label="search"
             />
           </div>
-          <button className="flex items-center justify-center rounded-lg h-16 w-[165px] border-opacity-0 bg-lightGrey gap-2 text-xl text-textBlack">
+          <button className="flex items-center justify-center rounded-lg  px-4 border-opacity-0 bg-lightGrey gap-2 text-xl text-textBlack">
             <RiEqualizerLine /> FILTER
           </button>
-          <button className="flex items-center justify-center rounded-lg h-16 w-[165px] border-opacity-0 bg-teal gap-2 text-xl text-white">
+          <button className="flex items-center justify-center rounded-lg px-4  border-opacity-0 bg-teal gap-2 text-xl text-white">
             <LuSearch /> SEARCH
           </button>
         </div>

@@ -4,6 +4,7 @@ import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import FormWrapper from "@auth/components/FormWrapper";
 import { PiLock } from "react-icons/pi";
+import useRecoverPassword from "../hooks/useRecoverPassword";
 
 type FormValues = {
   email: string;
@@ -14,9 +15,10 @@ const RecoverPassword = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>();
+  const { isLoading, recoverPassword } = useRecoverPassword();
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    recoverPassword(data);
   };
 
   return (
@@ -39,10 +41,7 @@ const RecoverPassword = () => {
           placeholder="Enter your email"
         />
 
-        <button
-          type={"submit"}
-          className={`mt-5 w-full bg-teal rounded-lg justify-center font-bold h-[54px]`}
-        >
+        <button type={"submit"} className={`mt-5 w-full bg-teal rounded-lg justify-center font-bold h-[54px]`}>
           Recover Password
         </button>
       </form>

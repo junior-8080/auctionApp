@@ -5,15 +5,12 @@ type Props = {
   id: string;
   placeholder: string;
   type?: "email" | "password" | "text";
-  errorMessage?: string;
+  errorMessage?: string | any;
   name?: string;
 };
 
 const BaseInput = forwardRef(
-  (
-    { label, id, placeholder, type = "text", errorMessage, ...rest }: Props,
-    ref: Ref<HTMLInputElement>,
-  ) => {
+  ({ label, id, placeholder, type = "text", errorMessage, ...rest }: Props, ref: Ref<HTMLInputElement>) => {
     return (
       <div className={"mt-5 w-full"}>
         <div className="relative w-full">
@@ -21,7 +18,7 @@ const BaseInput = forwardRef(
             autoComplete={"off"}
             {...rest}
             ref={ref}
-            className="autofill:bg-transparent block px-2.5 py-5 text-md rounded-md border border-gray-300 w-full text-gray-900 bg-transparent appearance-none focus:outline-2 focus:outline-primary-500 focus:ring-0 focus:border-primary-500 peer"
+            className="autofill:bg-transparent block px-2.5 py-4 text-md rounded-md border border-gray-300 w-full text-gray-900 bg-transparent appearance-none focus:outline-2 focus:outline-primary-500 focus:ring-0 focus:border-primary-500 peer"
             id={id}
             placeholder={placeholder}
             type={type}
@@ -36,7 +33,7 @@ const BaseInput = forwardRef(
         <p className={"text-xs text-red-400"}>{errorMessage}</p>
       </div>
     );
-  },
+  }
 );
 
 export default BaseInput;

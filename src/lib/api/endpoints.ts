@@ -1,7 +1,8 @@
 
 
 export const endpoints = {
-  login: "/login",
-  users: "/users/token",
-  signUp: "/users/create",
+  login: "/api/user/token/",
+  users: "/api/users/token",
+  signUp: "/api/users/create",
+  recoverPassword: "/api/user/password-reset/"
 };

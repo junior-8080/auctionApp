@@ -19,8 +19,9 @@ export const ReactQueryProvider: React.FC<any> = ({ pageProps, children }) => {
 
   return (
     <QueryClientProvider client={queryClientRef.current}>
-      <Hydrate state={pageProps.dehydratedState}>{children}</Hydrate>
+      {/* <Hydrate state={pageProps.dehydratedState}>{children}</Hydrate> */}
       {/* <ReactQueryDevtools /> */}
+      {children}
     </QueryClientProvider>
   );
 };
