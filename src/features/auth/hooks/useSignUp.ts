@@ -15,7 +15,7 @@ export function useSignUp() {
         mutationFn: authApi.signUp,
         onSuccess: () => {
             toast.success("Signup Successful")
-            router.push('/login')
+            router.push('/auth/login')
         },
         onError: () => {
             toast.error("Something went wrong.try again")
