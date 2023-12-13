@@ -24,7 +24,7 @@ const defaultResponseResolver = (
 };
 
 export const defaultMeta: CustomConfigMeta = {
-  appendSlash: false,
+  appendSlash: true,
   shouldResolve: true,
   errorResolver: defaultErrorResolver,
   responseResolver: defaultResponseResolver,

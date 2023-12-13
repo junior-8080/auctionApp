@@ -7,7 +7,8 @@ const request = createAxiosInstance({
   meta: {
     getAuthHeader: () =>
       getToken() ? { "Authorization	": `Bearer ${getToken()}` } : {},
-  },
+    appendSlash: true
+  }
 });
 
 request.defaults.baseURL = appConfig.apiUrl;
